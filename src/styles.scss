@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+$rock-paper-scissors-primary: mat.define-palette(mat.$indigo-palette);
+$rock-paper-scissors-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$rock-paper-scissors-warn: mat.define-palette(mat.$red-palette);
+$rock-paper-scissors-theme: mat.define-light-theme((
+  color: (
+    primary: $rock-paper-scissors-primary,
+    accent: $rock-paper-scissors-accent,
+    warn: $rock-paper-scissors-warn,
+  )
+));
+
+@include mat.all-component-themes($rock-paper-scissors-theme);
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed');
+
+* {
+  font-family: 'Barlow Semi Condensed';
+}
+
+html {
+  height: 100%;
+  background-image: radial-gradient(circle at top,rgb(31, 55, 86), rgb(20, 21, 57));
+  background-repeat: no-repeat center center fixed;;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

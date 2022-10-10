@@ -1,0 +1,187 @@
+// @import '../round-button/round-button.component.scss';
+@mixin button-definitions() {
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+@mixin transparent-box() {
+  border-radius: 8px;
+  background-color: transparent;
+  border: 2px solid hsl(217, 16%, 45%);
+  color: #F7F7F7;
+}
+h1{
+  color: #F7F7F7;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+h2 {
+  font-size: 12px;
+  margin: 10px 0 0 0;
+  text-align: center;
+  color: hsl(229, 64%, 46%);
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bolder;
+  line-height: 0px;
+  text-align: center;
+  color: hsl(229, 25%, 31%);
+}
+
+h4{
+  color: #F7F7F7;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+section {
+  width: 375px;
+  margin: 0 auto;
+}
+
+body {
+  margin-top: 100px;
+}
+
+.score-board {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 80%;
+  margin: 0 auto;
+  @include transparent-box();
+}
+
+.counter {
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  height: 80px;
+  width: 80px;
+  background-color: #F7F7F7;
+}
+
+.logo-container {
+  margin: 20px 100px 20px 20px;
+}
+
+.board-game {
+  background-image: url("/src/assets/img/bg-triangle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+//----------------------------- Choosing menu --------------------------------------//
+.options {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 300px;
+  height: 260px;
+  margin-bottom: 165px;
+
+  .line1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 60px;
+  }
+  .line2{
+    margin: 0 auto;
+  }
+
+  img {
+    z-index: -1;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+}
+
+//----------------------------- Confrontation menu ----------------------------------------//
+
+.confrontation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 auto;
+  width: 300px;
+  height: 197px;
+  position: relative;
+  text-align: center;
+
+}
+//----------------------------- Results menu ----------------------------------------//
+.results {
+  margin: 0 auto;
+  width: 300px;
+  position: relative;
+  text-align: center;
+
+}
+.btn-rematch{
+  @include button-definitions();
+  border: 0px;
+  width: 200px;
+  height: 50px;
+  color: rgb(20, 21, 57);
+  background-color: #F7F7F7;
+  font-size: 15px;
+}
+
+//----------------------------- Bottom menu ----------------------------------------//
+.bottom-options {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+
+// CHUNCHO
+@mixin common-definition(){
+  margin: auto;
+  width: 100px;
+  max-width: 100px;
+  min-width: 100px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  background-color: #F7F7F7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.default{
+  @include common-definition();
+  border: 12px solid rgb(19, 19, 19);
+  background-color: rgb(19, 19, 19);
+}
+.rock{
+  @include common-definition();
+  -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(221, 64, 93, 0.7);
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(221, 64, 93, 0.7);
+  border: 12px solid #dc2e4e;
+  background-image: url('/assets/img/icon-rock.png');
+}
+.paper{
+  @include common-definition();
+  -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(86, 113, 245, 0.7);
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(86, 113, 245, 0.7);
+  border: 12px solid #4865f4;
+  background-image: url('/assets/img/icon-paper.png');
+}
+.scissors{
+  @include common-definition();
+  -webkit-box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(236, 169, 34, 0.7);
+  box-shadow: inset 0 6px rgba(0, 0, 0, 0.2), 0 6px rgba(236, 169, 34, 0.7);
+  border: 12px solid #ec9e0e;
+  background-image: url('/assets/img/icon-scissors.png');
+}

@@ -1,0 +1,47 @@
+<section>
+  <header>
+    <div class="score-board">
+      <div class="logo-container">
+        <img src="assets/img/logo.png" alt="" width="80" height="60">
+      </div>
+      <div class="counter">
+        <h2>SCORE</h2>
+        <h3>{{ totalScore }}</h3>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <div class="board-game">
+      <div class="options" *ngIf="this.stage===0"><img src="assets/img/bg-triangle.png" alt="" width="200px" height="160px">
+        <div class="line1">
+          <button class="paper" (click)="getPlayerChoice(1);changeStage()"></button>
+          <br>
+          <button class="scissors" (click)="getPlayerChoice(2);changeStage()"></button>
+        </div>
+        <div class="line2">
+          <button class="rock" (click)="getPlayerChoice(0);changeStage()"></button>
+        </div>
+      </div>
+      <div class="confrontation" *ngIf="this.stage===1">
+        <div class="player-selection">
+          <button [class]="getStyle(this.playerChoice)"></button>
+          <h4>YOU PICKED</h4>
+        </div>
+        <div>
+        </div>
+        <div class="house-selection">
+          <button [class]="getStyle(this.houseChoice)" *ngIf="this.stage===1"></button>
+          <h4>THE HOUSE PICKED</h4>
+        </div>
+      </div>
+      <div class="results" *ngIf="this.stage===1">
+        <h1>{{this.results}}</h1>
+        <button class="btn-rematch" (click)="restart()">PLAY AGAIN</button>
+      </div>
+      <div class="bottom-options">
+        <app-rules></app-rules>
+      </div>
+    </div>
+  </body>
+</section>

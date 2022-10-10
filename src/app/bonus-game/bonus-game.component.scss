@@ -1,0 +1,210 @@
+// @import '../round-button/round-button.component.scss';
+@mixin button-definitions() {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  @mixin transparent-box() {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid hsl(217, 16%, 45%);
+    color: #F7F7F7;
+  }
+  h1{
+    color: #F7F7F7;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+  h2 {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    text-align: center;
+    color: hsl(229, 64%, 46%);
+  }
+
+  h3 {
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    line-height: 0px;
+    text-align: center;
+    color: hsl(229, 25%, 31%);
+  }
+
+  h4{
+    color: #F7F7F7;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  section {
+    width: 375px;
+    margin: 0 auto;
+  }
+
+  body {
+    margin-top: 100px;
+  }
+
+  .score-board {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 80%;
+    margin: 0 auto;
+    @include transparent-box();
+  }
+
+  .counter {
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    height: 80px;
+    width: 80px;
+    background-color: #F7F7F7;
+  }
+
+  .logo-container {
+    margin: 20px 100px 20px 20px;
+  }
+
+  .board-game {
+    background-image: url("/src/assets/img/bg-triangle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  //----------------------------- Choosing menu --------------------------------------//
+  .options {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 280px;
+    height: 268px;
+    margin-bottom: 165px;
+
+    .line1 {
+      margin: 0 auto;
+      margin-bottom: -13px;
+    }
+    .line2{
+      margin-bottom: 35px;
+      :first-child{
+        margin-right: 120px;
+      }
+    }
+    .line3{
+      width: 214px;
+      margin: 0 auto;
+      :first-child{
+        margin-right: 54px;
+      }
+    }
+
+    img {
+      margin: 0 auto;
+      z-index: -1;
+      position: absolute;
+      margin-left: 40px;
+      margin-top: 40px;
+    }
+  }
+
+  //----------------------------- Confrontation menu ----------------------------------------//
+
+  .confrontation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    width: 300px;
+    height: 197px;
+    position: relative;
+    text-align: center;
+
+  }
+  //----------------------------- Results menu ----------------------------------------//
+  .results {
+    margin: 0 auto;
+    width: 300px;
+    position: relative;
+    text-align: center;
+
+  }
+  .btn-rematch{
+    @include button-definitions();
+    border: 0px;
+    width: 200px;
+    height: 50px;
+    color: rgb(20, 21, 57);
+    background-color: #F7F7F7;
+    font-size: 15px;
+  }
+
+  //----------------------------- Bottom menu ----------------------------------------//
+  .bottom-options {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  //-------------------------------CHUNCHO---------------------------------------------//
+
+  @mixin common-definition-bonus(){
+    margin: auto;
+    width: 80px;
+    max-width: 80px;
+    min-width: 80px;
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: 7px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+    img{
+      z-index: 2;
+    }
+  }
+  .rock-bonus{
+    @include common-definition-bonus();
+    -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(221, 64, 93, 0.7);
+    box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(221, 64, 93, 0.7);
+    border: 7px solid #dc2e4e;
+    background-image: url('/src/assets/img/icon-rock.png');
+  }
+  .paper-bonus{
+    @include common-definition-bonus();
+    -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(86, 113, 245, 0.7);
+    box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(86, 113, 245, 0.7);
+    border: 7px solid #4865f4;
+    background-image: url('/src/assets/img/icon-paper.png');
+  }
+  .scissors-bonus{
+    @include common-definition-bonus();
+    -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(236, 169, 34, 0.7);
+    box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px rgba(236, 169, 34, 0.7);
+    border: 7px solid #ec9e0e;
+    background-image: url('/src/assets/img/icon-scissors.png');
+  }
+
+  .lizard-bonus{
+    @include common-definition-bonus();
+    -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px hsl(261, 73%, 60%);
+    box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px hsl(261, 73%, 60%);
+    border: 7px solid hsl(261, 75%, 52%);
+    background-image: url('/src/assets/img/icon-lizard.png');
+  }
+  .spock-bonus{
+    @include common-definition-bonus();
+    -webkit-box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px  hsl(189, 58%, 57%);
+    box-shadow: inset 0 3px rgba(0, 0, 0, 0.2), 0 3px  hsl(189, 58%, 57%);
+    border: 7px solid hsl(189, 66%, 49%);
+    background-image: url('/src/assets/img/icon-spock.png');
+  }
