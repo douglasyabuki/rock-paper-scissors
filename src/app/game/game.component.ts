@@ -18,6 +18,8 @@ export class GameComponent {
   public stage: number;
 
   constructor() {
+    this.playerChoice = 0;
+    this.houseChoice = 0;
     this.optionsIx = [0, 1, 2];
     this.stage = 0;
     this.totalScore = 0;
@@ -31,7 +33,7 @@ export class GameComponent {
     else this.stage = 0;
   }
 
-  public async getPlayerChoice(a: number) {
+  public getPlayerChoice(a: number) {
     this.playerChoice = a;
     console.log('Player choice', this.playerChoice)
     this.board[0] = this.playerChoice;

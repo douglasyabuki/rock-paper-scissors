@@ -17,26 +17,26 @@
       <div class="options" *ngIf="this.stage===0"><img src="assets/img/bg-pentagon.png" alt="" width="200px"
           height="188px">
         <div class="line1">
-          <button class="scissors-bonus" (click)="getPlayerChoice(2);changeStage()"></button>
+          <app-board-button [value]="5" (click)="getPlayerChoice(5);changeStage()"></app-board-button>
         </div>
         <div class="line2">
-          <button class="spock-bonus" (click)="getPlayerChoice(4);changeStage()"></button>
-          <button class="paper-bonus" (click)="getPlayerChoice(1);changeStage()"></button>
+          <app-board-button [value]="7" (click)="getPlayerChoice(7);changeStage()"></app-board-button>
+          <app-board-button [value]="4" (click)="getPlayerChoice(4);changeStage()"></app-board-button>
         </div>
         <div class="line3">
-          <button class="lizard-bonus" (click)="getPlayerChoice(3);changeStage()"></button>
-          <button class="rock-bonus" (click)="getPlayerChoice(0);changeStage()"></button>
+          <app-board-button [value]="6" (click)="getPlayerChoice(6);changeStage()"></app-board-button>
+          <app-board-button [value]="3" (click)="getPlayerChoice(3);changeStage()"></app-board-button>
         </div>
       </div>
       <div class="confrontation" *ngIf="this.stage===1">
         <div class="player-selection">
-          <button [class]="getStyle(this.playerChoice)"></button>
+          <app-board-button [value]="this.playerChoice"></app-board-button>
           <h4>YOU PICKED</h4>
         </div>
         <div>
         </div>
         <div class="house-selection">
-          <button [class]="getStyle(this.houseChoice)" *ngIf="this.stage===1"></button>
+          <app-board-button [value]="this.houseChoice" *ngIf="this.stage===1"></app-board-button>
           <h4>THE HOUSE PICKED</h4>
         </div>
       </div>

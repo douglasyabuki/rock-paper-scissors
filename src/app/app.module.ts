@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BonusRulesComponent } from './bonus-rules/bonus-rules.component';
 import { BonusRulesDialogComponent } from './bonus-rules/bonus-rules-dialog/bonus-rules-dialog.component';
+import { BoardButtonComponent } from './board-button/board-button.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BonusRulesDialogComponent } from './bonus-rules/bonus-rules-dialog/bonu
     RulesDialogComponent,
     BonusRulesComponent,
     BonusRulesDialogComponent,
+    BoardButtonComponent,
 
   ],
   imports: [

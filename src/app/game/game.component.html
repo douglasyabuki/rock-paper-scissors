@@ -15,23 +15,23 @@
     <div class="board-game">
       <div class="options" *ngIf="this.stage===0"><img src="assets/img/bg-triangle.png" alt="" width="200px" height="160px">
         <div class="line1">
-          <button class="paper" (click)="getPlayerChoice(1);changeStage()"></button>
+          <app-board-button [value]="1" (click)="getPlayerChoice(1);changeStage()"></app-board-button>
           <br>
-          <button class="scissors" (click)="getPlayerChoice(2);changeStage()"></button>
+          <app-board-button [value]="2" (click)="getPlayerChoice(2);changeStage()"></app-board-button>
         </div>
         <div class="line2">
-          <button class="rock" (click)="getPlayerChoice(0);changeStage()"></button>
+          <app-board-button [value]="0" (click)="getPlayerChoice(0);changeStage()"></app-board-button>
         </div>
       </div>
       <div class="confrontation" *ngIf="this.stage===1">
         <div class="player-selection">
-          <button [class]="getStyle(this.playerChoice)"></button>
+          <app-board-button [value]="this.playerChoice"></app-board-button>
           <h4>YOU PICKED</h4>
         </div>
         <div>
         </div>
         <div class="house-selection">
-          <button [class]="getStyle(this.houseChoice)" *ngIf="this.stage===1"></button>
+          <app-board-button [value]="this.houseChoice" *ngIf="this.stage===1"></app-board-button>
           <h4>THE HOUSE PICKED</h4>
         </div>
       </div>

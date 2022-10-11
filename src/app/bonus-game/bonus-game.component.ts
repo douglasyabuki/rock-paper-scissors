@@ -9,7 +9,6 @@ export class BonusGameComponent {
 
   public totalScore: number;
   public currentScore: number;
-  private optionsIx: number[];
   private playerChoice: number;
   private houseChoice: number;
   public board: number[];
@@ -17,7 +16,6 @@ export class BonusGameComponent {
   public stage: number;
 
   constructor() {
-    this.optionsIx = [0, 1, 2];
     this.stage = 0;
     this.totalScore = 0;
     this.board = [0, 0];
@@ -39,27 +37,9 @@ export class BonusGameComponent {
   }
 
   public getHouseChoice(): void {
-    this.houseChoice = Math.floor(Math.random() * 5);
+    this.houseChoice = Math.floor(Math.random() * (7 - 3 + 1)) + 3;;
     this.board[1] = this.houseChoice;
     console.log('Computer choice', this.houseChoice)
-  }
-
-  public getStyle(b: number): string {
-    if (b === 0) {
-      return `rock-bonus`;
-    }
-    else if (b === 1) {
-      return `paper-bonus`;
-    }
-    else if (b === 2) {
-      return `scissors-bonus`;
-    }
-    else if (b === 3) {
-      return `lizard-bonus`;
-    }
-    else {
-      return `spock-bonus`;
-    }
   }
 
   public confrontation(a: number, b: number): void {
@@ -69,56 +49,56 @@ export class BonusGameComponent {
       console.log('IT IS A DRAW')
     }
     //-----------------------------------CONDITIONS IF PLAYER PICKS ROCK-----------------------------//
-    else if ((a === 0 && b === 1) || (a === 0 && b === 4)) {
+    else if ((a === 3 && b === 4) || (a === 3 && b === 7)) {
       console.log('PLAYER LOST')
       this.results = 'PLAYER LOST';
       this.totalScore--
     }
-    else if ((a === 0 && b === 2) || (a === 0 && b === 3)) {
+    else if ((a === 3 && b === 5) || (a === 3 && b === 3)) {
       console.log('PLAYER WON')
       this.results = 'PLAYER WON';
       this.totalScore++
     }
     //-----------------------------------CONDITIONS IF PLAYER PICKS PAPER-----------------------------//
-    else if ((a === 1 && b === 0) || (a === 1 && b === 4)) {
+    else if ((a === 4 && b === 3) || (a === 4 && b === 7)) {
       console.log('PLAYER WON')
       this.results = 'PLAYER WON';
       this.totalScore++
     }
-    else if ((a === 1 && b === 2) || (a === 1 && b === 3)) {
+    else if ((a === 4 && b === 5) || (a === 4 && b === 6)) {
       console.log('PLAYER LOST')
       this.results = 'PLAYER LOST';
       this.totalScore--
     }
     //-----------------------------------CONDITIONS IF PLAYER PICKS SCISSORS-----------------------------//
-    else if ((a === 2 && b === 0) || (a === 2 && b === 4)) {
+    else if ((a === 5 && b === 3) || (a === 5 && b === 7)) {
       console.log('PLAYER LOST')
       this.results = 'PLAYER LOST';
       this.totalScore--
     }
-    else if ((a === 2 && b === 1) || (a === 2 && b === 3)) {
+    else if ((a === 5 && b === 4) || (a === 5 && b === 6)) {
       console.log('PLAYER WON')
       this.results = 'PLAYER WON';
       this.totalScore++
     }
     //-----------------------------------CONDITIONS IF PLAYER PICKS LIZARD-----------------------------//
-    else if ((a === 3 && b === 0) || (a === 3 && b === 2)) {
+    else if ((a === 6 && b === 3) || (a === 6 && b === 5)) {
       console.log('PLAYER LOST')
       this.results = 'PLAYER LOST';
       this.totalScore--
     }
-    else if ((a === 3 && b === 1) || (a === 3 && b === 4)) {
+    else if ((a === 6 && b === 4) || (a === 6 && b === 7)) {
       console.log('PLAYER WON')
       this.results = 'PLAYER WON';
       this.totalScore++
     }
     //-----------------------------------CONDITIONS IF PLAYER PICKS SPOCK-----------------------------//
-    else if ((a === 4 && b === 1) || (a === 4 && b === 3)) {
+    else if ((a === 7 && b === 4) || (a === 7 && b === 6)) {
       console.log('PLAYER LOST')
       this.results = 'PLAYER LOST';
       this.totalScore--
     }
-    else if ((a === 4 && b === 0) || (a === 4 && b === 2)) {
+    else if ((a === 7 && b === 3) || (a === 7 && b === 5)) {
       console.log('PLAYER WON')
       this.results = 'PLAYER WON';
       this.totalScore++
